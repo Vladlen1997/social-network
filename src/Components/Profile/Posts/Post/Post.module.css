@@ -1,0 +1,9 @@
+.post {
+    width: 80px;
+    border-radius: 60%;
+}
+
+.post img {
+    width: 70px;
+    border-radius: 50%;
+}
