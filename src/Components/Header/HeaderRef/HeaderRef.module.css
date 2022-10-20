@@ -1,0 +1,15 @@
+.ref {
+    padding-top: 20px;
+}
+
+.ref a {
+    padding-left: 25px;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: dimgrey
+}
+
+.ref a:hover {
+    color: black;
+}
+

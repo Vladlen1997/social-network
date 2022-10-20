@@ -1,0 +1,13 @@
+.header {
+    grid-area: h;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(3, 2fr);
+    box-shadow: 0 4px 10px rgba(0,0,0, .1);
+}
+
+
+
+
+
