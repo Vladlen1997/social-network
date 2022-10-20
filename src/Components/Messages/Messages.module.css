@@ -1,0 +1,9 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 20px 0 0 20px;
+}
+
+.messages_block {
+    padding-top: 15px;
+}
