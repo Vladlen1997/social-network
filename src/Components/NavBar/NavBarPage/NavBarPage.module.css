@@ -1,0 +1,13 @@
+.nav_page {
+    padding: 15px 0 15px 50px;
+    letter-spacing: 0.1em;
+}
+
+.nav_page a {
+    text-decoration: none;
+    color: dimgrey;
+}
+
+.nav_page a:hover {
+    color: black;
+}
