@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Posts.module.css';
 import Post from "./Post/Post";
-import {addNewPostTextCreator, updateNewPostTextCreator} from "../../../redux/state";
+import {addNewPostTextCreator, updateNewPostTextCreator} from "../../../redux/store";
 
 
 const Posts = (props) => {
