@@ -4,9 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import store from "./redux/store";
-
-
+import store from "./redux/redux-store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let redrawingStore = (state) => {
@@ -20,7 +18,7 @@ let redrawingStore = (state) => {
 }
 
 redrawingStore(store.getState());
-store.subscribe (() => {
+store.subscribe(() => {
         let state = store.getState();
         redrawingStore(state);
     }
