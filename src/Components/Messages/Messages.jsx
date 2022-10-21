@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Messages.module.css';
 import MessagesItems from "./MessagesItems/MessagesItems";
 import Interlocutor from "./Interlocutor/Interlocutor";
-import {addNewMessageTextCreator, updateNewMessageTextCreator} from "../../redux/store";
+import {addNewMessageTextCreator, updateNewMessageTextCreator} from "../../redux/reducers/dialogs-reducer";
 
 const Messages = (props) => {
 
