@@ -2,22 +2,24 @@ import React from 'react';
 import classes from './Messages.module.css';
 import MessagesItems from "./MessagesItems/MessagesItems";
 import Interlocutor from "./Interlocutor/Interlocutor";
-import {addNewMessageTextCreator, updateNewMessageTextCreator} from "../../redux/reducers/dialogs-reducer";
+
 
 const Messages = (props) => {
 
+    let state = props.messagesPage;
 
-    let messagesEl = props.messagesPage.messages.map(message => <MessagesItems message={message.message} id={message.id}/>);
-    let interlocutorEl = props.messagesPage.interlocutor.map(name => <Interlocutor name={name.name} id={name.id}/>);
-    let newMessageText = props.messagesPage.addNewMessage;
+    let messagesEl = state.messages.map(message => <MessagesItems message={message.message} id={message.id}/>);
+    let interlocutorEl = state.interlocutor.map(name => <Interlocutor name={name.name} id={name.id}/>);
+    let newMessageText = state.addNewMessage;
 
     const sendMessageText = () => {
-        props.dispatch(addNewMessageTextCreator());
+        props.sendMessage();
     }
 
     const updateNewMessageText = (e) => {
         let message = e.target.value;
-        props.dispatch(updateNewMessageTextCreator(message));
+        props.updateNewMessageText(message);
+
     }
 
 
@@ -29,8 +31,11 @@ const Messages = (props) => {
             <div>{messagesEl}</div>
 
             <div className={classes.messages_block}>
-                <div><textarea placeholder='new message..' value={newMessageText} onChange={updateNewMessageText}/></div>
-                <div><button onClick={sendMessageText}>Send</button></div>
+                <div><textarea placeholder='new message..' value={newMessageText} onChange={updateNewMessageText}/>
+                </div>
+                <div>
+                    <button onClick={sendMessageText}>Send</button>
+                </div>
             </div>
 
         </div>
