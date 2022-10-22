@@ -3,7 +3,7 @@ import Header from "./Components/Header/Header";
 import Profile from "./Components/Profile/Profile";
 import NavBar from "./Components/NavBar/NavBar";
 import {Route, Routes} from "react-router-dom";
-import Messages from "./Components/Messages/Messages";
+import MessagesContainer from "./Components/Messages/MessagesContainer";
 
 const App = (props) => {
     return (
@@ -14,8 +14,8 @@ const App = (props) => {
 
             <div className="main-wrapper">
                 <Routes>
-                    <Route path='/Profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
-                    <Route path='/Messages' element={<Messages messagesPage={props.state.messagesPage} dispatch={props.dispatch}/>}/>
+                    <Route path='/Profile' element={<Profile store={props.store}/>}/>
+                    <Route path='/Messages' element={<MessagesContainer store={props.store}/>}/>
                 </Routes>
             </div>
         </div>
