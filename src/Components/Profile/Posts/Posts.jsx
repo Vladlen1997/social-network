@@ -1,22 +1,24 @@
 import React from 'react';
 import classes from './Posts.module.css';
 import Post from "./Post/Post";
-import {addNewPostTextCreator, updateNewPostTextCreator} from "../../../redux/reducers/profile-reducer";
 
 
 const Posts = (props) => {
 
-    let postEl = props.profilePage.post.map(post => <Post post={post.post} likesCount={post.likesCount}/>);
-    let addNewPost = props.profilePage.addNewPost;
+    let state = props.profilePage;
+
+    let postEl = state.post.map(post => <Post post={post.post} likesCount={post.likesCount}/>);
+    let addNewPost = state.addNewPost;
 
 
     const sendNewMessage = () => {
-        props.dispatch(addNewPostTextCreator());
+        // props.dispatch(addNewPostTextCreator());
+        props.addNewPostText();
     }
 
     const updateNewPostText = (e) => {
         let text = e.target.value;
-        props.dispatch(updateNewPostTextCreator(text));
+        props.updateNewPostText(text);
     }
 
     return (
