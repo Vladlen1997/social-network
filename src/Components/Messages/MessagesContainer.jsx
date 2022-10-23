@@ -1,23 +1,33 @@
 import React from 'react';
 import {addNewMessageTextCreator, updateNewMessageTextCreator} from "../../redux/reducers/dialogs-reducer";
 import Messages from "./Messages";
+import StoreContext from "../../StoreContext";
 
-const MessagesContainer = (props) => {
+const MessagesContainer = () => {
 
-    let state = props.store.getState().messagesPage;
+    return <StoreContext.Consumer>
+        {
+            (store) => {
 
+                let state = store.getState().messagesPage;
 
-    const sendMessageText = () => {
-        props.store.dispatch(addNewMessageTextCreator());
-    }
+                const sendMessageText = () => {
+                    store.dispatch(addNewMessageTextCreator());
+                }
 
-    const updateNewMessageText = (message) => {
-        props.store.dispatch(updateNewMessageTextCreator(message));
-    }
+                const updateNewMessageText = (message) => {
+                    store.dispatch(updateNewMessageTextCreator(message));
+                }
 
+                return <Messages updateNewMessageText={updateNewMessageText} sendMessage={sendMessageText}
+                                 messagesPage={state}/>
+            }
+        }
 
-    return <Messages updateNewMessageText={updateNewMessageText} sendMessage={sendMessageText} messagesPage={state}/> //если в одну строку, то скобки не ставим
+    </StoreContext.Consumer>
+
 }
 
-
 export default MessagesContainer;
+
+
