@@ -11,8 +11,7 @@ const Posts = (props) => {
     let addNewPost = state.addNewPost;
 
 
-    const sendNewMessage = () => {
-        // props.dispatch(addNewPostTextCreator());
+    const sendNewPost = () => {
         props.addNewPostText();
     }
 
@@ -29,7 +28,7 @@ const Posts = (props) => {
 
                 <div><textarea placeholder='Write your message' value={addNewPost} onChange={updateNewPostText}/></div>
                 <div>
-                    <button onClick={sendNewMessage}>Send</button>
+                    <button onClick={sendNewPost}>Send</button>
                 </div>
 
             </div>
