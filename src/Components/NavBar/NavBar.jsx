@@ -2,10 +2,10 @@ import React from 'react';
 import classes from './NavBar.module.css';
 import NavBarPage from "./NavBarPage/NavBarPage";
 
-
 const NavBar = (props) => {
 
-    let navBarEl = props.navBar.map(nav => <NavBarPage page={nav.page} id={nav.id}/>);
+    let navBar = props.navBar;
+    let navBarEl = navBar.map(nav => <NavBarPage page={nav.page} id={nav.id}/>);
 
     return (
         <div className={classes.nav}>
@@ -13,6 +13,5 @@ const NavBar = (props) => {
         </div>
     )
 }
-
 
 export default NavBar;
