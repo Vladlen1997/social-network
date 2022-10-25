@@ -13,7 +13,7 @@ const Messages = (props) => {
     let newMessageText = state.addNewMessage;
 
     const sendMessageText = () => {
-        props.sendMessage();
+        props.sendMessageText();
     }
 
     const updateNewMessageText = (e) => {
@@ -21,7 +21,6 @@ const Messages = (props) => {
         props.updateNewMessageText(message);
 
     }
-
 
     return (
         <div className={classes.dialogs}>
@@ -31,16 +30,16 @@ const Messages = (props) => {
             <div>{messagesEl}</div>
 
             <div className={classes.messages_block}>
-                <div><textarea placeholder='new message..' value={newMessageText} onChange={updateNewMessageText}/>
+                <div>
+                    <textarea placeholder='new message..' value={newMessageText} onChange={updateNewMessageText}/>
                 </div>
+
                 <div>
                     <button onClick={sendMessageText}>Send</button>
                 </div>
             </div>
-
         </div>
     )
 }
-
 
 export default Messages;
