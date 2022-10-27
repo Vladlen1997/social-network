@@ -8,8 +8,8 @@ const Messages = (props) => {
 
     let state = props.messagesPage;
 
-    let messagesEl = state.messages.map(message => <MessagesItems message={message.message} id={message.id}/>);
-    let interlocutorEl = state.interlocutor.map(name => <Interlocutor name={name.name} id={name.id}/>);
+    let messagesEl = state.messages.map(message => <MessagesItems message={message.message} key={message.id} id={message.id}/>);
+    let interlocutorEl = state.interlocutor.map(name => <Interlocutor name={name.name} key={name.id} id={name.id}/>);
     let newMessageText = state.addNewMessage;
 
     const sendMessageText = () => {
