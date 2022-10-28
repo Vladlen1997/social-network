@@ -4,7 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import MessagesContainer from "./Components/Messages/MessagesContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import NavBarContainer from "./Components/NavBar/NavBarContainer";
-import Users from "./Components/Users/Users";
+import UsersContainer from "./Components/Users/Users";
 
 const App = () => {
     return (
@@ -17,7 +17,7 @@ const App = () => {
                 <Routes>
                     <Route path='/Profile' element={<Profile/>}/>
                     <Route path='/Messages' element={<MessagesContainer/>}/>
-                    <Route path='/Users' element={<Users/>}/>
+                    <Route path='/Users' element={<UsersContainer/>}/>
                 </Routes>
             </div>
         </div>
